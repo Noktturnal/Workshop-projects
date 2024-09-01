@@ -31,7 +31,9 @@ This is a simple number guessing game implemented in Python. The user thinks of 
 
 - Guessing: 250 Is my guess too high, too low, or did I win? too low
 
-- Guessing: 375 Is my guess too high, too low, or did I win? you won Great, humanity will never win against silicon!
+- Guessing: 375 Is my guess too high, too low, or did I win? you won
+
+- Great, humanity will never win against silicon!
 
 
 ## Prerequisites
