@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2001 Dice Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>2001 Dice Game</h1>
+        <form method="POST">
+            <label for="player_dice1">Choose your first dice:</label>
+            <select name="player_dice1" id="player_dice1" required>
+                {% for dice in dice_options %}
+                    <option value="{{ dice }}">{{ dice }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="player_dice2">Choose your second dice:</label>
+            <select name="player_dice2" id="player_dice2" required>
+                {% for dice in dice_options %}
+                    <option value="{{ dice }}">{{ dice }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="hidden" name="player_score" value="{{ player_score }}">
+            <input type="hidden" name="npc_score" value="{{ npc_score }}">
+
+            <button type="submit">Roll Dice</button>
+        </form>
+
+        <h2>Current Scores</h2>
+        <p>Player Score: {{ player_score }}</p>
+        <p>NPC Score: {{ npc_score }}</p>
+    </div>
+</body>
+</html>
