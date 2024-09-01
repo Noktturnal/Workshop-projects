@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 2rem;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        button {
+            margin: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        /* Message styling */
+        .message {
+            color: red;
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            button {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Reverse Number Guessing Game</h1>
+    <form method="post">
+        <input type="hidden" name="min_value" value="{{ min_value }}">
+        <input type="hidden" name="max_value" value="{{ max_value }}">
+        <p>Is my guess too high, too low, or did I win?</p>
+        <p>Current guess: {{ guess }}</p>
+        <button name="response" value="too_low">Too low</button>
+        <button name="response" value="too_high">Too high</button>
+        <button name="response" value="you_won">You win</button>
+    </form>
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+</body>
+</html>
