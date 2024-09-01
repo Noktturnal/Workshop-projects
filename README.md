@@ -1,2 +1,0 @@
-# Workshop-projects
-Workshop projects
